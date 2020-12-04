@@ -28,19 +28,14 @@ To execute the perturbations, we focus on the input level rather than the embedd
 ## Perturbations
 
 We execute the attacks using three methods:
-##### [**133t 5p34k**](https://en.wikipedia.org/wiki/Leet)
-Leetspeak is characterized by the use of non-alphabet characters to substitute one or multiple letters of one word with visually similar-looking symbols, so-called homoglyphs. Commonly used homoglyphs in leetspeak are numbers.
+##### **133t 5p34k**
+[Leetspeak](https://en.wikipedia.org/wiki/Leet) is characterized by the use of non-alphabet characters to substitute one or multiple letters of one word with visually similar-looking symbols, so-called homoglyphs. Commonly used homoglyphs in leetspeak are numbers.
  We generate adversarial examples by swapping the letters **a, e, l, o, and s** of the identified important words with the numbers **4, 3, 1, 0, and 5**, respectively. Note that a modified important word can theoretically contain as many numbers as it has letters. The leetspeak attack applied on the example review results in the modified input sequence *It's w<ins>0</ins>nd<ins>3</ins>rfu<ins>1</ins> for computer gaming*.
  
 ##### **Mispeelings**
 We use a [list of common misspellings from Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings "Wikipedia List of common misspellings") to generate adversarial examples. We first determine the important words and then replace them with all possible misspellings.The list consists of 4.282 entries, where one word can have multiple misspelling variations. The resulting modified example sentence is *It's wonderful<ins>l</ins> for computer gaming*. 
 
 ##### **,Punctuation.?**
-Testing the influence of one additional comma after the important word.
-
-
-
-\paragraph*{Punctuation}
 We want to find out whether a single comma added after the important word poses an efficient way to cause misclassifications when addressing the ABSA task using BERT. One additional comma is unobtrusive, might occur in practical use cases, and is not easily identified as an adversarial example by a human observer. Perturbing the example sentence using the punctuation method results in *It's wonderful<ins>,</ins> for computer gaming*. 
 
 
